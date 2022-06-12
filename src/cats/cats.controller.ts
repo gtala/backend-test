@@ -1,9 +1,8 @@
 import {Controller, Get, Post, Body, Put, Param} from '@nestjs/common';
-import {CountryDetails, UpdateUserDto, UpdateUserDtoDb} from './dto/update-user.dto';
+import {CountryDetails, CreateUserDto, UpdateUserDto, UpdateUserDtoDb} from './dto/update-user.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
 import {CountryService} from "./country.service";
-import {response} from "express";
 
 @Controller('cats')
 export class CatsController {
@@ -18,7 +17,6 @@ export class CatsController {
     }
 
     const responses = await Promise.all(requests)
-    console.log(responses)
 
     const countries : CountryDetails[] = responses.map( (c : CountryDetails)=> ({name : '', breed : ''}))
     const countryDto:  UpdateUserDtoDb =  {
@@ -26,6 +24,11 @@ export class CatsController {
        nationalities : countries
     }
     return this.catsService.update(id, countryDto);
+  }
+
+  @Post()
+  async create( @Body() createCatDto: CreateUserDto) {
+    return this.catsService.create( createCatDto);
   }
 
   @Get()
