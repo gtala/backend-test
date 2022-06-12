@@ -15,20 +15,31 @@ export class CatsController {
     for (const nationality of createCatDto.nationalities) {
       requests.push(this.countryService.findAll())
     }
-
     const responses = await Promise.all(requests)
-
-    const countries : CountryDetails[] = responses.map( (c : CountryDetails)=> ({name : '', breed : ''}))
-    const countryDto:  UpdateUserDtoDb =  {
+    const countryDto : UpdateUserDtoDb =  {
       name : createCatDto.name,
-       nationalities : countries
+      surname: 'tala',
+     countries : responses.map( (c : any )=> ({name : c[0].name, flag : c[0].flag, timezones : c[0].timezones}))
     }
+
     return this.catsService.update(id, countryDto);
   }
 
   @Post()
-  async create( @Body() createCatDto: CreateUserDto) {
-    return this.catsService.create( createCatDto);
+  async create( @Body() createCatDto: UpdateUserDto) {
+
+    const requests = []
+    for (const nationality of createCatDto.nationalities) {
+      requests.push(this.countryService.findAll())
+    }
+    const responses = await Promise.all(requests)
+    const dataDto : UpdateUserDtoDb =  {
+      name : createCatDto.name,
+      surname: '',
+      countries : responses.map( (c : any )=> ({name : c[0].name, flag : c[0].flag, timezones : c[0].timezones}))
+    }
+
+    return this.catsService.create( dataDto);
   }
 
   @Get()

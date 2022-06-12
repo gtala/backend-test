@@ -10,11 +10,14 @@ export class CreateUserDto {
 
 export class UpdateUserDtoDb {
   readonly name: string;
-  readonly nationalities : CountryDetails[]
+  readonly surname: string;
+  readonly countries : CountryDetails[]
 }
 
-
 export class CountryDetails {
-  readonly name: string;
-  readonly breed: string;
+  readonly name: {
+    common : string
+  };
+  readonly flag: string;
+  readonly timezones: string[];
 }

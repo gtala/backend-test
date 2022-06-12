@@ -16,7 +16,7 @@ export class CatsService {
     return post;
   }
 
-  async create(createCatDto: CreateUserDto): Promise<Cat> {
+  async create(createCatDto: UpdateUserDtoDb): Promise<Cat> {
     return await this.catModel.create(createCatDto)
   }
 
