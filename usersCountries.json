@@ -1,13 +1,17 @@
 {
-  "name" : "Guillermo",
-  "nationalities" : [{
-    "name" : "españa",
-    "code" : "es"
-  }, {
-    "name" : "Argentina",
-    "code" : "Ar"
-  }, {
-    "name" : "Alemania",
-    "code" : "Ge"
-  }]
+  "name": "Guillermo",
+  "nationalities": [
+    {
+      "name": "españa",
+      "code": "es"
+    },
+    {
+      "name": "Argentina",
+      "code": "Ar"
+    },
+    {
+      "name": "Alemania",
+      "code": "Ge"
+    }
+  ]
 }
