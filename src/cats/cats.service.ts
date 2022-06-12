@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common'
 import { Model } from 'mongoose'
-import { CreateUserDto, UpdateUserDto, UpdateUserDtoDb } from './dto/update-user.dto'
-import { Cat } from './interfaces/cat.interface'
+import { UpdateUserDtoDb } from './dto/update-user.dto'
+import { Cat } from './models/cat.model'
 import * as mongoose from 'mongoose'
 
 @Injectable()

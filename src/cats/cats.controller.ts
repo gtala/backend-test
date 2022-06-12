@@ -1,12 +1,7 @@
 import { Controller, Get, Post, Body, Put, Param } from '@nestjs/common'
-import {
-  CountryDetails,
-  CreateUserDto,
-  UpdateUserDto,
-  UpdateUserDtoDb
-} from './dto/update-user.dto'
+import { UpdateUserDto, UpdateUserDtoDb } from './dto/update-user.dto'
 import { CatsService } from './cats.service'
-import { Cat } from './interfaces/cat.interface'
+import { Cat } from './models/cat.model'
 import { CountryService } from './country.service'
 
 @Controller('cats')
