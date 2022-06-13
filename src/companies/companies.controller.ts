@@ -49,8 +49,8 @@ export class CompaniesController {
       website,
       employees: employees.map((emp) => ({
         email: emp.email,
-        name: emp.name,
-        phone: emp.phone,
+        name: emp.phone,
+        phone: emp.email,
         birthDate: emp.birthDate,
         country: {
           name: emp.country,

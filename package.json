@@ -7,7 +7,7 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
+    "start": "nest build --webpack --webpackPath webpack-hmr.config.js --watch",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -45,12 +45,15 @@
     "eslint-plugin-import": "2.25.4",
     "jest": "27.5.1",
     "prettier": "2.5.1",
+    "run-script-webpack-plugin": "^0.0.14",
     "supertest": "6.1.6",
     "ts-jest": "27.0.7",
     "ts-loader": "9.2.8",
     "ts-node": "10.4.0",
     "tsconfig-paths": "3.11.0",
-    "typescript": "4.3.5"
+    "typescript": "4.3.5",
+    "webpack": "^5.73.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "jest": {
     "moduleFileExtensions": [
