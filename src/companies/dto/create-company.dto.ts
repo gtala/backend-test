@@ -3,10 +3,10 @@ export class CreateCompanyDto {
   readonly country: string
   readonly website: string
   readonly phone: string
-  readonly employees: EmployeeDto[]
+  readonly employees: CreateEmployeeDto[]
 }
 
-export class EmployeeDto {
+export class CreateEmployeeDto {
   readonly name: string
   readonly email: string
   readonly phone: string

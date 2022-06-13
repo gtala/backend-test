@@ -8,12 +8,8 @@ import { CreateCompanyDto } from './dto/create-company.dto'
 export class CompaniesService {
   constructor(@Inject('COMPANY_MODEL') private readonly companyModel: Model<Company>) {}
 
-  async update(_id: string, createCompanyDto: CreateCompanyDto): Promise<Company> {
-    const post = await this.companyModel
-      .findByIdAndUpdate(new mongoose.Types.ObjectId(_id), createCompanyDto)
-      .setOptions({ overwrite: true, new: true })
-
-    return post
+  async update(id: string, createCompanyDto: CreateCompanyDto) {
+    return this.companyModel.updateOne({ _id: id }, {}).exec()
   }
 
   async create(createCompanyDto: CreateCompanyDto): Promise<Company> {
