@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import fetch from 'cross-fetch'
 
-const COUNTRIES_URL = 'https://restcountries.com/v3.1/alpha/pe'
+const COUNTRIES_URL = 'https://restcountries.com/v3.1/name/'
 
 @Injectable()
 export class CountryService {

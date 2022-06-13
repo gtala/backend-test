@@ -33,18 +33,31 @@ export class CompaniesController {
       this.countryService.getByName(employee.country)
     )
     const responses = await Promise.all(promises)
-    const cache = createCompanyDto.employees.map((employee, index) => ({
-      country: employee.country,
-      data: responses[index][0]
-    }))
+    const cache: any = {}
+    for (let index = 0; index < createCompanyDto.employees.length; index++) {
+      cache[createCompanyDto.employees[index].country] = responses[index][0]
+    }
 
-    const { name, country, phone, website } = createCompanyDto
+    console.log(cache)
+
+    const { name, country, phone, website, employees } = createCompanyDto
     const update: UpdateCompanyDto = {
       name,
       country,
       phone,
       website,
-      employees: [{ birthDate: '', country: undefined, email: '', phone: '', name: '' }]
+      employees: employees.map((e) => ({
+        email: e.email,
+        name: e.name,
+        phone: e.phone,
+        birthDate: e.birthDate,
+        country: {
+          name: e.country,
+          capital: cache[e.country].capital,
+          region: cache[e.country].region,
+          timezones: cache[e.country].timezones
+        }
+      }))
     }
 
     return this.companiesService.update(id, update)

@@ -1,16 +1,18 @@
 import { Inject, Injectable } from '@nestjs/common'
 import { Model } from 'mongoose'
 import { Company } from './models/companies.model'
-import * as mongoose from 'mongoose'
 import { CreateCompanyDto } from './dto/create-company.dto'
 import { UpdateCompanyDto } from './dto/update-company.dto'
+import * as mongoose from 'mongoose'
 
 @Injectable()
 export class CompaniesService {
   constructor(@Inject('COMPANY_MODEL') private readonly companyModel: Model<Company>) {}
 
   async update(id: string, updateCompanyDto: UpdateCompanyDto) {
-    return this.companyModel.updateOne({ _id: id }, updateCompanyDto).exec()
+    return this.companyModel
+      .updateOne({ _id: new mongoose.Types.ObjectId(id) }, updateCompanyDto)
+      .exec()
   }
 
   async create(createCompanyDto: CreateCompanyDto): Promise<Company> {
