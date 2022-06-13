@@ -29,10 +29,11 @@ export class CompaniesController {
 
   @Put(':id')
   async update(@Param() id: string, @Body() createCompanyDto: CreateCompanyDto): Promise<Company> {
-    const httpRequestCountryResults = await Promise.all(
-      createCompanyDto.employees.map((employee) => this.countryService.getByName(employee.country))
+    const httpRequests = createCompanyDto.employees.map((employee) =>
+      this.countryService.getByName(employee.country)
     )
-    const countries = await Promise.all(httpRequestCountryResults.map((r) => r.json()))
+    const httpResponses = await Promise.all(httpRequests)
+    const countries = await Promise.all(httpResponses.map((r) => r.json()))
 
     const allCountriesResult: any = {}
     for (let index = 0; index < createCompanyDto.employees.length; index++) {
