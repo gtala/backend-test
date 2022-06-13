@@ -1,8 +1,17 @@
 import { Document } from 'mongoose'
-import { CountryDetails } from '../dto/update-user.dto'
 
-export interface Cat extends Document {
+export interface Company extends Document {
   readonly name: string
-  readonly surname: string
-  readonly countries: CountryDetails[]
+  readonly country: string
+  readonly website: string
+  readonly phone: string
+  readonly employees: Employee[]
+}
+
+export interface Employee {
+  readonly name: string
+  readonly email: string
+  readonly phone: string
+  readonly birthDate: string
+  readonly country: string
 }

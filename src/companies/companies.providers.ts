@@ -1,10 +1,10 @@
 import { Mongoose } from 'mongoose'
 import { CompaniesSchema } from './schemas/companies.schema'
 
-export const catsProviders = [
+export const companiesProviders = [
   {
-    provide: 'CAT_MODEL',
-    useFactory: (mongoose: Mongoose) => mongoose.model('Cat', CompaniesSchema),
+    provide: 'COMPANY_MODEL',
+    useFactory: (mongoose: Mongoose) => mongoose.model('Companies', CompaniesSchema),
     inject: ['DATABASE_CONNECTION']
   }
 ]

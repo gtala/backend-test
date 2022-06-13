@@ -1,58 +1,45 @@
 import { Controller, Get, Post, Body, Put, Param } from '@nestjs/common'
-import { UpdateUserDto, UpdateUserDtoDb } from './dto/update-user.dto'
+import { CreateCompanyDto, UpdateUserDtoDb } from './dto/create-company.dto'
 import { CompaniesService } from './companies.service'
-import { Cat } from './models/companies.model'
+import { Company } from './models/companies.model'
 import { CountryService } from '../countries/country.service'
 
 @Controller('companies')
 export class CompaniesController {
   constructor(
-    private readonly catsService: CompaniesService,
+    private readonly companiesService: CompaniesService,
     private readonly countryService: CountryService
   ) {}
 
   @Put(':id')
-  async updatePost(@Param() id: string, @Body() createCatDto: UpdateUserDto) {
-    const requests = []
-    for (const nationality of createCatDto.nationalities) {
-      requests.push(this.countryService.findAll())
-    }
-    const responses = await Promise.all(requests)
-    const countryDto: UpdateUserDtoDb = {
-      name: createCatDto.name,
-      surname: 'tala',
-      countries: responses.map((c: any) => ({
-        name: c[0].name,
-        flag: c[0].flag,
-        timezones: c[0].timezones
-      }))
-    }
-
-    return this.catsService.update(id, countryDto)
+  async updatePost(@Param() id: string, @Body() createCompanyDto: CreateCompanyDto) {
+    return this.companiesService.update(id, createCompanyDto)
   }
 
   @Post()
-  async create(@Body() createCatDto: UpdateUserDto) {
+  async create(@Body() companyDto: CreateCompanyDto) {
     const requests = []
-    for (const nationality of createCatDto.nationalities) {
+    for (const employee of companyDto.employees) {
+      console.log('country to find', employee.country)
       requests.push(this.countryService.findAll())
     }
     const responses = await Promise.all(requests)
-    const dataDto: UpdateUserDtoDb = {
-      name: createCatDto.name,
+
+    /* const dataDto: UpdateUserDtoDb = {
+      name: companyDto.name,
       surname: '',
       countries: responses.map((c: any) => ({
         name: c[0].name,
         flag: c[0].flag,
         timezones: c[0].timezones
       }))
-    }
+    }*/
 
-    return this.catsService.create(dataDto)
+    return this.companiesService.create(companyDto)
   }
 
   @Get()
-  async findAll(): Promise<Cat[]> {
-    return this.catsService.findAll()
+  async findAll(): Promise<Company[]> {
+    return this.companiesService.findAll()
   }
 }
