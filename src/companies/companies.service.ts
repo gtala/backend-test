@@ -25,6 +25,6 @@ export class CompaniesService {
   }
 
   async findById(_id: string): Promise<Company> {
-    return this.companyModel.findOne().exec()
+    return this.companyModel.findOne({ _id: _id }).exec()
   }
 }

@@ -42,4 +42,9 @@ export class CompaniesController {
   async findAll(): Promise<Company[]> {
     return this.companiesService.findAll()
   }
+
+  @Get(':id')
+  async findOne(@Param('id') id: string): Promise<Company> {
+    return this.companiesService.findById(id)
+  }
 }
