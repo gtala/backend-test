@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Put, Param } from '@nestjs/common'
+import { Controller, Get, Post, Body, Put, Param, Logger } from '@nestjs/common'
 import { CreateCompanyDto } from './dto/create-company.dto'
 import { CompaniesService } from './companies.service'
 import { Company } from './models/companies.model'
@@ -32,12 +32,12 @@ export class CompaniesController {
     const promises = createCompanyDto.employees.map((employee) =>
       this.countryService.getByName(employee.country)
     )
-    const responses = await Promise.all(promises)
+    const res = await Promise.all(promises)
+    const rest2 = await Promise.all(res.map((r) => r.json()))
     const cache: any = {}
     for (let index = 0; index < createCompanyDto.employees.length; index++) {
-      cache[createCompanyDto.employees[index].country] = responses[index][0]
+      cache[createCompanyDto.employees[index].country] = rest2[index][0]
     }
-
     const { name, country, phone, website, employees } = createCompanyDto
     const update: UpdateCompanyDto = {
       name,
