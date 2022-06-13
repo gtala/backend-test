@@ -13,5 +13,12 @@ export interface Employee {
   readonly email: string
   readonly phone: string
   readonly birthDate: string
-  readonly country: string
+  readonly country: Country
+}
+
+export interface Country {
+  readonly name: string
+  readonly region: string
+  readonly capital: string
+  readonly timezones: string[]
 }

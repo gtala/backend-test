@@ -17,5 +17,6 @@ export class UpdateEmployeeDto {
 export class UpdateCountryDto {
   readonly name: string
   readonly capital: string
+  readonly region: string
   readonly timezones: string[]
 }
