@@ -1,11 +1,11 @@
 import { Inject, Injectable } from '@nestjs/common'
 import { Model } from 'mongoose'
 import { UpdateUserDtoDb } from './dto/update-user.dto'
-import { Cat } from './models/cat.model'
+import { Cat } from './models/companies.model'
 import * as mongoose from 'mongoose'
 
 @Injectable()
-export class CatsService {
+export class CompaniesService {
   constructor(@Inject('CAT_MODEL') private readonly catModel: Model<Cat>) {}
 
   async update(_id: string, createCatDto: UpdateUserDtoDb): Promise<Cat> {

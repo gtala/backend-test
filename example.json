@@ -1,0 +1,217 @@
+[
+  {
+    "name": "youtube",
+    "country": "Chile",
+    "website": "https://reddit.com",
+    "phone": "1-749-202-3587",
+    "employees": [
+      {
+        "name": "Violet Quinn",
+        "email": "lectus@protonmail.edu",
+        "phone": "1-587-273-6218",
+        "birthDate": "Aug 3, 2022",
+        "country": "India"
+      },
+      {
+        "name": "Prescott Blankenship",
+        "email": "malesuada@hotmail.ca",
+        "phone": "(487) 592-7918",
+        "birthDate": "Sep 30, 2021",
+        "country": "Poland"
+      },
+      {
+        "name": "Colt Keith",
+        "email": "ligula.donec@icloud.com",
+        "phone": "(323) 154-5628",
+        "birthDate": "Apr 19, 2023",
+        "country": "Brazil"
+      },
+      {
+        "name": "Cooper Lawson",
+        "email": "quam.dignissim.pharetra@icloud.couk",
+        "phone": "(433) 671-9641",
+        "birthDate": "Sep 1, 2021",
+        "country": "Peru"
+      },
+      {
+        "name": "Wynne Short",
+        "email": "ante.dictum.mi@icloud.org",
+        "phone": "(712) 144-6345",
+        "birthDate": "Jan 27, 2022",
+        "country": "Ireland"
+      }
+    ]
+  },
+  {
+    "country": "Russian Federation",
+    "website": "https://cnn.com",
+    "name": "nytimes.com",
+    "phone": "1-584-822-2123",
+    "employees": [
+      {
+        "name": "Mechelle Vazquez",
+        "email": "dui.augue@outlook.ca",
+        "phone": "1-385-849-7931",
+        "birthDate": "Jan 18, 2022",
+        "country": "Peru"
+      },
+      {
+        "name": "Cullen Ramirez",
+        "email": "risus.quis@icloud.net",
+        "phone": "1-474-307-0802",
+        "birthDate": "Mar 25, 2022",
+        "country": "India"
+      },
+      {
+        "name": "Claudia Goodwin",
+        "email": "in.tempus@yahoo.com",
+        "phone": "1-803-888-5896",
+        "birthDate": "Feb 28, 2022",
+        "country": "Indonesia"
+      },
+      {
+        "name": "Gavin Herring",
+        "email": "quisque.porttitor.eros@hotmail.edu",
+        "phone": "(422) 314-4571",
+        "birthDate": "Oct 29, 2021",
+        "country": "Poland"
+      },
+      {
+        "name": "Gwendolyn Patterson",
+        "email": "non.bibendum.sed@outlook.couk",
+        "phone": "1-346-934-0487",
+        "birthDate": "Jan 2, 2022",
+        "country": "Singapore"
+      }
+    ]
+  },
+  {
+    "name": "cnn",
+    "country": "Singapore",
+    "website": "https://yahoo.com",
+    "phone": "(445) 894-7551",
+    "employees":[
+      {
+        "name": "Fredericka Wiggins",
+        "email": "lobortis@icloud.couk",
+        "phone": "1-166-875-4375",
+        "birthDate": "Aug 31, 2022",
+        "country": "Turkey"
+      },
+      {
+        "name": "Keith Jordan",
+        "email": "lorem.vehicula.et@hotmail.net",
+        "phone": "(455) 555-8548",
+        "birthDate": "Jun 3, 2023",
+        "country": "Turkey"
+      },
+      {
+        "name": "Cameran Brennan",
+        "email": "diam.at@yahoo.ca",
+        "phone": "1-377-672-8055",
+        "birthDate": "May 19, 2023",
+        "country": "South Korea"
+      },
+      {
+        "name": "Hop Charles",
+        "email": "feugiat.sed@outlook.com",
+        "phone": "(350) 212-6368",
+        "birthDate": "Aug 25, 2022",
+        "country": "Ukraine"
+      },
+      {
+        "name": "Jocelyn Sims",
+        "email": "eleifend.cras@icloud.org",
+        "phone": "(626) 330-3821",
+        "birthDate": "Mar 25, 2022",
+        "country": "Spain"
+      }
+    ]
+  },
+  {
+    "name": "nytimes",
+    "country": "Ireland",
+    "website": "https://whatsapp.com",
+    "phone": "1-358-964-3126",
+    "employees": [
+      {
+        "name": "Stacey Herman",
+        "email": "magna.sed@yahoo.net",
+        "phone": "1-495-108-7032",
+        "birthDate": "Nov 29, 2021",
+        "country": "South Korea"
+      },
+      {
+        "name": "Xenos Frye",
+        "email": "aliquam.ultrices@google.com",
+        "phone": "(770) 362-6186",
+        "birthDate": "Jan 26, 2022",
+        "country": "Spain"
+      },
+      {
+        "name": "Tara Mills",
+        "email": "interdum.libero@aol.com",
+        "phone": "1-191-467-4624",
+        "birthDate": "Jul 2, 2022",
+        "country": "Singapore"
+      },
+      {
+        "name": "Isaiah Vasquez",
+        "email": "commodo.ipsum.suspendisse@protonmail.net",
+        "phone": "(375) 382-3042",
+        "birthDate": "Mar 21, 2023",
+        "country": "Singapore"
+      },
+      {
+        "name": "Kelsey Stanley",
+        "email": "lobortis.tellus.justo@aol.net",
+        "phone": "(114) 498-1197",
+        "birthDate": "Mar 14, 2023",
+        "country": "United States"
+      }
+    ]
+  },
+  {
+    "name": "facebook",
+    "country": "Australia",
+    "website": "http://ebay.com",
+    "phone": "1-763-721-1604",
+    "employees": [
+      {
+        "name": "Anthony Hancock",
+        "email": "dolor.nulla@google.ca",
+        "phone": "1-456-117-5490",
+        "birthDate": "May 30, 2023",
+        "country": "Australia"
+      },
+      {
+        "name": "Ethan Hickman",
+        "email": "habitant.morbi@icloud.edu",
+        "phone": "1-229-833-4471",
+        "birthDate": "Jun 4, 2023",
+        "country": "Spain"
+      },
+      {
+        "name": "Ashely Ochoa",
+        "email": "tempus@outlook.com",
+        "phone": "1-773-707-9514",
+        "birthDate": "Jun 3, 2022",
+        "country": "Chile"
+      },
+      {
+        "name": "Nelle Morris",
+        "email": "integer.id.magna@yahoo.edu",
+        "phone": "(653) 418-9757",
+        "birthDate": "May 25, 2022",
+        "country": "Philippines"
+      },
+      {
+        "name": "Jemima Nolan",
+        "email": "erat.etiam@hotmail.couk",
+        "phone": "(534) 607-6415",
+        "birthDate": "Oct 19, 2022",
+        "country": "Singapore"
+      }
+    ]
+  }
+]

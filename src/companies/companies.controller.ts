@@ -1,13 +1,13 @@
 import { Controller, Get, Post, Body, Put, Param } from '@nestjs/common'
 import { UpdateUserDto, UpdateUserDtoDb } from './dto/update-user.dto'
-import { CatsService } from './cats.service'
-import { Cat } from './models/cat.model'
+import { CompaniesService } from './companies.service'
+import { Cat } from './models/companies.model'
 import { CountryService } from '../countries/country.service'
 
-@Controller('cats')
-export class CatsController {
+@Controller('companies')
+export class CompaniesController {
   constructor(
-    private readonly catsService: CatsService,
+    private readonly catsService: CompaniesService,
     private readonly countryService: CountryService
   ) {}
 
