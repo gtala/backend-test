@@ -28,36 +28,38 @@ export class CompaniesController {
   }
 
   @Put(':id')
-  async update(@Param() id: string, @Body() createCompanyDto: CreateCompanyDto) {
-    const promises = createCompanyDto.employees.map((employee) =>
-      this.countryService.getByName(employee.country)
+  async update(@Param() id: string, @Body() createCompanyDto: CreateCompanyDto): Promise<Company> {
+    const httpRequestCountryResults = await Promise.all(
+      createCompanyDto.employees.map((employee) => this.countryService.getByName(employee.country))
     )
-    const res = await Promise.all(promises)
-    const rest2 = await Promise.all(res.map((r) => r.json()))
-    const cache: any = {}
+    const countries = await Promise.all(httpRequestCountryResults.map((r) => r.json()))
+
+    const allCountriesResult: any = {}
     for (let index = 0; index < createCompanyDto.employees.length; index++) {
-      cache[createCompanyDto.employees[index].country] = rest2[index][0]
+      allCountriesResult[createCompanyDto.employees[index].country] = countries[index][0]
     }
+
     const { name, country, phone, website, employees } = createCompanyDto
-    const update: UpdateCompanyDto = {
+
+    const updateCompanyDto: UpdateCompanyDto = {
       name,
       country,
       phone,
       website,
-      employees: employees.map((e) => ({
-        email: e.email,
-        name: e.name,
-        phone: e.phone,
-        birthDate: e.birthDate,
+      employees: employees.map((emp) => ({
+        email: emp.email,
+        name: emp.name,
+        phone: emp.phone,
+        birthDate: emp.birthDate,
         country: {
-          name: e.country,
-          capital: cache[e.country].capital,
-          region: cache[e.country].region,
-          timezones: cache[e.country].timezones
+          name: emp.country,
+          capital: allCountriesResult[emp.country].capital,
+          region: allCountriesResult[emp.country].region,
+          timezones: allCountriesResult[emp.country].timezones
         }
       }))
     }
 
-    return this.companiesService.update(id, update)
+    return this.companiesService.update(id, updateCompanyDto)
   }
 }
