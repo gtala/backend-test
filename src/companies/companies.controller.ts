@@ -38,8 +38,6 @@ export class CompaniesController {
       cache[createCompanyDto.employees[index].country] = responses[index][0]
     }
 
-    console.log(cache)
-
     const { name, country, phone, website, employees } = createCompanyDto
     const update: UpdateCompanyDto = {
       name,

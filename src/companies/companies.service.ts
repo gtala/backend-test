@@ -9,10 +9,10 @@ import * as mongoose from 'mongoose'
 export class CompaniesService {
   constructor(@Inject('COMPANY_MODEL') private readonly companyModel: Model<Company>) {}
 
-  async update(id: string, updateCompanyDto: UpdateCompanyDto) {
-    return this.companyModel
-      .updateOne({ _id: new mongoose.Types.ObjectId(id) }, updateCompanyDto)
-      .exec()
+  async update(id: string, updateCompanyDto: UpdateCompanyDto): Promise<Company> {
+    const idDb = new mongoose.Types.ObjectId(id)
+    await this.companyModel.updateOne({ _id: idDb }, updateCompanyDto)
+    return this.companyModel.findOne({ _id: idDb }).exec()
   }
 
   async create(createCompanyDto: CreateCompanyDto): Promise<Company> {
